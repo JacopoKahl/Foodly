@@ -36,7 +36,7 @@ class FoodList(models.Model):
         else:
             self.status =  "good"
 
-        return self.productName + " " + self.productCategory + " " + self.status
+        return self.productName + " " + self.productCategory + " | " + self.status
 
 
 
