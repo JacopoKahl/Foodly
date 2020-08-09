@@ -5,8 +5,12 @@ from .models import FoodList
 
 def home(request):
 
-    return render(request, 'frontend/home.html')
+    siteName = "Foodly"
+
+    return render(request, 'frontend/home.html', {'siteName':siteName})
 
 def features(request):
 
-    return render(request, 'frontend/features.html')
+    siteName = "Foodly"
+
+    return render(request, 'frontend/features.html', {'siteName':siteName})
