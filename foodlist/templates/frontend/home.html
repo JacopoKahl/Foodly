@@ -3,9 +3,11 @@
 
 {% load i18n %}
 
-{% block mainblock %}
 
+{% block mainblock %}
   {% trans "Translation test" %}
+  {% get_current_language as LANGUAGE_CODE %}
+  {{ LANGUAGE_CODE }}
   <section class="hero-section" id="hero">
 
     <div class="wave">
@@ -25,7 +27,7 @@
         <div class="col-12 hero-text-image">
           <div class="row">
             <div class="col-lg-7 text-center text-lg-left">
-              <h1 data-aos="fade-right">Foodly helps you to organize your meals</h1>
+              <h1 data-aos="fade-right">{% trans "Foodly helps you to organize your meals" %}</h1>
               <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit.</p>
               <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">Download Now</a></p>

@@ -11,4 +11,5 @@ urlpatterns = [
 urlpatterns += i18n_patterns (
     #url(r'' , include('foodlist.urls')),
     path('', include('foodlist.urls')),
+    #prefix_default_language=False,
 )
