@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'foodlist',
+    'modeltranslation',
+    'recipes',
 ]
 
 MIDDLEWARE = [
@@ -108,11 +110,13 @@ USE_TZ = True
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')
 ]
-
-LANGUAGES = [
-    ('en', 'English'),
-    ('it', 'Italian'),
-]
+'''
+from django.utils.translation import ugettext_lazy as _
+LANGUAGES = (
+    ('en', _('English')),
+    ('it', _('Italian')),
+)
+'''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
