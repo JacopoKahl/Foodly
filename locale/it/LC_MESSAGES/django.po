@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-10 12:12+0200\n"
+"POT-Creation-Date: 2020-08-10 16:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,3 +21,7 @@ msgstr ""
 #: foodlist/templates/frontend/home.html:8
 msgid "Translation test"
 msgstr "Traduzione di esempio"
+
+#: foodlist/templates/frontend/home.html:30
+msgid "Foodly helps you to organize your meals"
+msgstr "Foodly ti aiuta ad organizzare i tuoi pasti"
