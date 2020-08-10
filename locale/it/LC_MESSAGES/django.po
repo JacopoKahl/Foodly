@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-10 16:23+0200\n"
+"POT-Creation-Date: 2020-08-10 17:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: foodlist/templates/frontend/home.html:8
-msgid "Translation test"
-msgstr "Traduzione di esempio"
-
-#: foodlist/templates/frontend/home.html:30
+#: foodlist/templates/frontend/home.html:27
 msgid "Foodly helps you to organize your meals"
 msgstr "Foodly ti aiuta ad organizzare i tuoi pasti"
+
+#: foodlist/templates/frontend/home.html:30
+msgid "Download Now"
+msgstr "Scarica ora"
+
+#~ msgid "Translation test"
+#~ msgstr "Traduzione di esempio"

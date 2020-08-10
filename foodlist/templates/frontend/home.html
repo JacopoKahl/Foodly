@@ -5,9 +5,6 @@
 
 
 {% block mainblock %}
-  {% trans "Translation test" %}
-  {% get_current_language as LANGUAGE_CODE %}
-  {{ LANGUAGE_CODE }}
   <section class="hero-section" id="hero">
 
     <div class="wave">
@@ -30,7 +27,7 @@
               <h1 data-aos="fade-right">{% trans "Foodly helps you to organize your meals" %}</h1>
               <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit.</p>
-              <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">Download Now</a></p>
+              <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">{% trans "Download Now" %}</a></p>
             </div>
             <div class="col-lg-5 iphone-wrap">
               <img src="{%static 'frontend/assets/img/phone_1.png' %}" alt="Image" class="phone-1" data-aos="fade-right">
