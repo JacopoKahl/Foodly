@@ -22,13 +22,14 @@ foodStatus = (
 
 class FoodList(models.Model):
 
-    productName = models.CharField(u'Product name', help_text=u'The name of the product', max_length=100)
+    productName = models.CharField(u'Product name', help_text=u'The name of the product', max_length=30)
     productCategory = models.CharField(u'Product category', help_text=u'The type of food', max_length=10, choices=foodCategories, default='meat')
     productBuyDate = models.DateField(u'Buying day', help_text=u'When you bought it')
     productExpDate = models.DateField(u'Expiring day', help_text=u'Food Expiration Dates')
-
     todayIs = models.DateField(u'Today is', help_text=u'Check if the product is good to eat')
     #Had to be updated every day with a scheduled cron job
+
+    productPrice = models.DecimalField(u'Price', help_text=u'The price of the single product', max_digits=10, decimal_places=2)
 
     def __str__(self):
         if self.todayIs >= self.productExpDate:
@@ -36,7 +37,7 @@ class FoodList(models.Model):
         else:
             self.status =  "good"
 
-        return self.productName + " " + self.productCategory + " " + self.status
+        return self.productName + " | " + self.productCategory + " | " + self.status + " | " + str(self.productPrice) + "€"
 
 
 

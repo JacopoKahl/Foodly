@@ -1,7 +1,11 @@
 {% extends 'frontend/main.html' %}
 {% load static %}
 
+{% load i18n %}
+
 {% block mainblock %}
+
+  {% trans "Translation test" %}
   <section class="hero-section" id="hero">
 
     <div class="wave">
@@ -21,10 +25,10 @@
         <div class="col-12 hero-text-image">
           <div class="row">
             <div class="col-lg-7 text-center text-lg-left">
-              <h1 data-aos="fade-right">Promote Your App with SoftLand</h1>
+              <h1 data-aos="fade-right">Foodly helps you to organize your meals</h1>
               <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit.</p>
-              <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">Get started</a></p>
+              <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#" class="btn btn-outline-white">Download Now</a></p>
             </div>
             <div class="col-lg-5 iphone-wrap">
               <img src="{%static 'frontend/assets/img/phone_1.png' %}" alt="Image" class="phone-1" data-aos="fade-right">
@@ -45,7 +49,7 @@
 
         <div class="row justify-content-center text-center mb-5">
           <div class="col-md-5" data-aos="fade-up">
-            <h2 class="section-heading">Save your time to using SoftLand</h2>
+            <h2 class="section-heading">Save your Food from expire</h2>
           </div>
         </div>
 
@@ -53,28 +57,28 @@
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="">
             <div class="feature-1 text-center">
               <div class="wrap-icon icon-1">
-                <span class="icon la la-users"></span>
+                <span class="icon"><lottie-player src="https://assets10.lottiefiles.com/packages/lf20_VWqKSz.json"  background="transparent"  speed="0.5"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>
               </div>
-              <h3 class="mb-3">Explore Your Team</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+              <h3 class="mb-3">Become a chef</h3>
+              <p>The app notify you the food expirations and recomend you a dish.</p>
             </div>
           </div>
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="feature-1 text-center">
               <div class="wrap-icon icon-1">
-                <span class="icon la la-toggle-off"></span>
+                <span class="icon"><lottie-player src="https://assets3.lottiefiles.com/packages/lf20_Wwzihz.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop  autoplay></lottie-player></lottie-player></span>
               </div>
-              <h3 class="mb-3">Digital Whiteboard</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+              <h3 class="mb-3">Save money</h3>
+              <p>Foodly helps you save money by avoiding food sacks.</p>
             </div>
           </div>
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-1 text-center">
               <div class="wrap-icon icon-1">
-                <span class="icon la la-umbrella"></span>
+                <span class="icon"><lottie-player src="https://assets2.lottiefiles.com/packages/lf20_VYHRLT.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop  autoplay></lottie-player></span>
               </div>
-              <h3 class="mb-3">Design To Development</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+              <h3 class="mb-3">Powerful AI</h3>
+              <p>Recommend you the best dishes based on the food that is close to expiration.</p>
             </div>
           </div>
         </div>
@@ -157,84 +161,11 @@
       <div class="container">
         <div class="row justify-content-center text-center mb-5">
           <div class="col-md-4">
-            <h2 class="section-heading">Review From Our Users</h2>
+            <h2 class="section-heading">See in action</h2>
           </div>
         </div>
         <div class="row justify-content-center text-center">
-          <div class="col-md-7">
-            <div class="owl-carousel testimonial-carousel">
-              <div class="review text-center">
-                <p class="stars">
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star muted"></span>
-                </p>
-                <h3>Excellent App!</h3>
-                <blockquote>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                    aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                    provident voluptates consectetur maiores quos.</p>
-                </blockquote>
-
-                <p class="review-user">
-                  <img src="{%static 'frontend/assets/img/person_1.jpg' %}" alt="Image" class="img-fluid rounded-circle mb-3">
-                  <span class="d-block">
-                    <span class="text-black">Jean Doe</span>, &mdash; App User
-                  </span>
-                </p>
-
-              </div>
-
-              <div class="review text-center">
-                <p class="stars">
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star muted"></span>
-                </p>
-                <h3>This App is easy to use!</h3>
-                <blockquote>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                    aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                    provident voluptates consectetur maiores quos.</p>
-                </blockquote>
-
-                <p class="review-user">
-                  <img src="{%static 'frontend/assets/img/person_2.jpg' %}" alt="Image" class="img-fluid rounded-circle mb-3">
-                  <span class="d-block">
-                    <span class="text-black">Johan Smith</span>, &mdash; App User
-                  </span>
-                </p>
-
-              </div>
-
-              <div class="review text-center">
-                <p class="stars">
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star"></span>
-                  <span class="icofont-star muted"></span>
-                </p>
-                <h3>Awesome functionality!</h3>
-                <blockquote>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                    aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                    provident voluptates consectetur maiores quos.</p>
-                </blockquote>
-
-                <p class="review-user">
-                  <img src="{%static 'frontend/assets/img/person_3.jpg' %}" alt="Image" class="img-fluid rounded-circle mb-3">
-                  <span class="d-block">
-                    <span class="text-black">Jean Thunberg</span>, &mdash; App User
-                  </span>
-                </p>
-
-              </div>
-            </div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/MFmr_TZLpS0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
