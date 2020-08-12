@@ -13,6 +13,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns (
     #url(r'' , include('foodlist.urls')),
     path('', include('foodlist.urls')),
+    path('tinymce/', include('tinymce.urls')),
     
     #prefix_default_language=False,
 )
