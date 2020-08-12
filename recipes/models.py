@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 
 class FoodRecipes(models.Model):
@@ -16,7 +17,7 @@ class FoodRecipes(models.Model):
     imgRecipe = models.ImageField(upload_to='media', null=True)
     slug = models.SlugField(max_length = 250, unique_for_date='publish', default='-')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='User', null=True)
-    recipeContent = models.TextField(u'Recipe content', help_text=u'Write here your recipe', default='-')    
+    textRecipe = HTMLField(u'Recipe content', default='Get inspired')
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

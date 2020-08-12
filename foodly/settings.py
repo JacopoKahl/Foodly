@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'foodlist',
     'modeltranslation',
     'recipes',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
