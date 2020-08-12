@@ -13,6 +13,7 @@ class FoodRecipes(models.Model):
     )
 
     recipeName = models.CharField(u'Recipe name', help_text=u'The name of the recipe', max_length=30)
+    imgRecipe = models.ImageField(upload_to='media', null=True)
     slug = models.SlugField(max_length = 250, unique_for_date='publish', default='-')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='User', null=True)
     recipeContent = models.TextField(u'Recipe content', help_text=u'Write here your recipe', default='-')    
@@ -20,6 +21,7 @@ class FoodRecipes(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+
     class Meta:
         ordering = ('-publish',)
 
