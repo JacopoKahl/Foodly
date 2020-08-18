@@ -14,6 +14,7 @@ urlpatterns += i18n_patterns (
     #url(r'' , include('foodlist.urls')),
     path('', include('foodlist.urls')),
     path('tinymce/', include('tinymce.urls')),
-    
+    path('tagging_autocomplete_new/', include('tagging_autocomplete_new.urls')),
+
     #prefix_default_language=False,
 )

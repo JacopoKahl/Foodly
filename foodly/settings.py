@@ -30,6 +30,11 @@ INSTALLED_APPS = [
     'modeltranslation',
     'recipes',
     'tinymce',
+    'tagging',
+    'tagging_autocomplete',
+    'tagging_autocomplete_new',
+    'taggit',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +112,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Define a Cron Job to check the current date and update the today date in foodlist model
+CRONJOBS = [
+    ('2 * * * *', 'foodlist.cron.todayIs')
+]
+
 # Path where Django look for django.po files for all supported languages
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')
@@ -127,3 +137,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+# Add configuration to the tagging autocomplete system
+TAGGING_AUTOCOMPLETE_SEARCH_CONTAINS = True
+TAGGING_AUTOCOMPLETE_MAX_RESULTS = 5
+TAGGING_AUTOCOMPLETE_MIN_LENGTH = 3
