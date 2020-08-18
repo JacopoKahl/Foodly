@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django.utils import timezone
 from tinymce.models import HTMLField
-
+from tagging_autocomplete_new.models import TagAutocompleteField
 
 class FoodRecipes(models.Model):
 
@@ -13,8 +13,9 @@ class FoodRecipes(models.Model):
     ('published', 'Published'),
     )
 
-    recipeName = models.CharField(u'Recipe name', help_text=u'The name of the recipe', max_length=30)
-    imgRecipe = models.ImageField(upload_to='media', null=True)
+    ingredientsRecipe = TagAutocompleteField(u'Ingredients', help_text=u'Put the ingredients comma separated. Ex. mushrooms, tomatoes,', max_length=30)
+    recipeName = models.CharField(u'Recipe name', help_text=u'The name of the recipe', max_length=30, blank=True)
+    imgRecipe = models.ImageField(u'Recipe image', upload_to='media', null=True)
     slug = models.SlugField(max_length = 250, unique_for_date='publish', default='-')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='User', null=True)
     textRecipe = HTMLField(u'Recipe content', default='Get inspired')
