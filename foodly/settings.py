@@ -1,5 +1,6 @@
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'foodlist',
     'modeltranslation',
     'recipes',
@@ -114,7 +116,7 @@ USE_TZ = True
 
 # Define a Cron Job to check the current date and update the today date in foodlist model
 CRONJOBS = [
-    ('2 * * * *', 'foodlist.cron.todayIs')
+    ('*/2 * * * *', 'foodly.cron.todayIs')
 ]
 
 # Path where Django look for django.po files for all supported languages

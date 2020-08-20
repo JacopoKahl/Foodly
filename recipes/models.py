@@ -13,7 +13,7 @@ class FoodRecipes(models.Model):
     ('published', 'Published'),
     )
 
-    ingredientsRecipe = TagAutocompleteField(u'Ingredients', help_text=u'Put the ingredients comma separated. Ex. mushrooms, tomatoes,', max_length=30)
+    ingredientsRecipe = models.CharField(u'Ingredients', help_text=u'Put the ingredients comma separated. Ex. mushrooms, tomatoes,', max_length=30)
     recipeName = models.CharField(u'Recipe name', help_text=u'The name of the recipe', max_length=30, blank=True)
     imgRecipe = models.ImageField(u'Recipe image', upload_to='media', null=True)
     slug = models.SlugField(max_length = 250, unique_for_date='publish', default='-')

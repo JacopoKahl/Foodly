@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import FoodList
 from recipes.models import FoodRecipes
+from rest_framework import viewsets
+from .serializers import FoodSerializer
 
 # Create your views here.
 
@@ -22,3 +24,8 @@ def recipes(request):
     siteName = "Foodly"
     recipes = FoodRecipes.objects.all()
     return render(request, 'frontend/recipes.html', {'siteName':siteName, 'recipes':recipes})
+
+# class to pass objects model to trough REST API
+class FoodViewset(viewsets.ModelViewSet):
+    serializer_class = FoodSerializer
+    queryset = FoodList.objects.all()
