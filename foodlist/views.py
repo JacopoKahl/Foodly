@@ -3,6 +3,7 @@ from .models import FoodList
 from recipes.models import FoodRecipes
 from rest_framework import viewsets
 from .serializers import FoodSerializer
+from rest_framework.authentication import TokenAuthentication
 
 # Create your views here.
 
@@ -29,3 +30,4 @@ def recipes(request):
 class FoodViewset(viewsets.ModelViewSet):
     serializer_class = FoodSerializer
     queryset = FoodList.objects.all()
+    authentication_classes = (TokenAuthentication,)

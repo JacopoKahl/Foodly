@@ -5,4 +5,4 @@ from .models import FoodList
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodList
-        fields = ['productName', 'productCategory', 'productStatus', 'productExpDate', 'productBuyDate', 'productPrice']
+        fields = ['id', 'productName', 'productCategory', 'productStatus', 'productExpDate', 'productBuyDate', 'productPrice']
