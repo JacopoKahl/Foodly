@@ -26,6 +26,13 @@ def recipes(request):
     recipes = FoodRecipes.objects.all()
     return render(request, 'frontend/recipes.html', {'siteName':siteName, 'recipes':recipes})
 
+def panel(request):
+    return render(request, 'backend/home.html')
+
+def food_list(request):
+    return  render(request, 'backend/foodlist.html')
+
+
 # class to pass objects model to trough REST API
 class FoodViewset(viewsets.ModelViewSet):
     serializer_class = FoodSerializer
