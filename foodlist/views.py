@@ -30,7 +30,9 @@ def panel(request):
     return render(request, 'backend/home.html')
 
 def food_list(request):
-    return  render(request, 'backend/foodlist.html')
+    foods = FoodList.objects.all()
+
+    return  render(request, 'backend/foodlist.html', {'foods':foods})
 
 
 # class to pass objects model to trough REST API
