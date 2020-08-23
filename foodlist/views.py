@@ -38,6 +38,15 @@ def food_list(request):
 
 def food_add(request):
 
+    if request.method == 'POST':
+        productname = request.POST.get('productname')
+        productcategory = request.POST.get('productcategory')
+        expday = request.POST.get('expday')
+        productprice = request.POST.get('productprice')
+        #productnotes = request.POST.get('productnotes')
+
+        print(productname, productcategory, expday, productprice)
+
     return  render(request, 'backend/foodlist_add.html')
 
 class UserViewset(viewsets.ModelViewSet):
