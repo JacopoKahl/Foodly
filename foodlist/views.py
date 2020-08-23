@@ -45,8 +45,13 @@ def food_add(request):
         productprice = request.POST.get('productprice')
         #productnotes = request.POST.get('productnotes')
 
-        print(productname, productcategory, expday, productprice)
+        if productname == "" or expday == "" or productprice == "":
+            error = "All fields required"
+            return render(request, 'backend/error.html', {'error': error})
 
+        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice)
+        add.save()
+        return redirect('food_list')
     return  render(request, 'backend/foodlist_add.html')
 
 class UserViewset(viewsets.ModelViewSet):
