@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from .serializers import FoodSerializer, UserSerializer
+from rest_framework.authentication import TokenAuthentication
 from .models import FoodList
 from recipes.models import FoodRecipes
 from rest_framework import viewsets
-from .serializers import FoodSerializer
-from rest_framework.authentication import TokenAuthentication
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -34,9 +36,18 @@ def food_list(request):
 
     return  render(request, 'backend/foodlist.html', {'foods':foods})
 
+def food_add(request):
+
+    return  render(request, 'backend/foodlist_add.html')
+
+class UserViewset(viewsets.ModelViewSet):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
 
 # class to pass objects model to trough REST API
 class FoodViewset(viewsets.ModelViewSet):
     serializer_class = FoodSerializer
     queryset = FoodList.objects.all()
+
+    #Activate in order to request Token access for users
     authentication_classes = (TokenAuthentication,)
