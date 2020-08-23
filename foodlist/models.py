@@ -35,6 +35,7 @@ class FoodList(models.Model):
     #Had to be updated every day with a scheduled cron job
     productPrice = models.DecimalField(u'Price', help_text=u'The price of the single product', max_digits=10, decimal_places=2)
 
+
     def __str__(self):
         today = date.today() #grab today date
         if today >= self.productExpDate:
