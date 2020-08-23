@@ -13,9 +13,9 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns (
-    path('auth/', obtain_auth_token),
     #url(r'' , include('foodlist.urls')),
     path('', include('foodlist.urls')),
+    path('auth/', obtain_auth_token),
     path('tinymce/', include('tinymce.urls')),
     path('tagging_autocomplete_new/', include('tagging_autocomplete_new.urls')),
 

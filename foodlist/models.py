@@ -1,5 +1,6 @@
 from __future__ import unicode_literals #Database can read all the languages
 from django.db import models
+from django.contrib.auth.models import User
 from datetime import date
 from django.utils import timezone
 #from tagging_autocomplete_new.models import TagAutocompleteField
@@ -37,9 +38,9 @@ class FoodList(models.Model):
     def __str__(self):
         today = date.today() #grab today date
         if today >= self.productExpDate:
-            self.productStatus =  'expired'
+            self.productStatus = 'expired'
         else:
-            self.productStatus =  'good'
+            self.productStatus = 'good'
 
         self.save()
 
