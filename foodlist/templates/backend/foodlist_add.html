@@ -52,7 +52,7 @@
     <div class="card">
 
             <div class="card-body">
-              <form action="{% url 'food_add' %}" method="post">
+              <form action="{% url 'food_add' %}" method="post" >
                 {% csrf_token %}
                 <!-- Address -->
                 <h6 class="heading-small text-muted mb-4">Add or Modify a Product</h6>
@@ -88,6 +88,12 @@
                       <div class="form-group">
                         <label class="form-control-label" for="productprice">Price</label>
                         <input type="number" id="productprice" name="productprice" class="form-control" placeholder="The price of the single product" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="productimage">Image</label>
+                        <input type="file" id="productimage" name="productimage" class="form-control dropzone" placeholder="Drop ">
                       </div>
                     </div>
                   </div>
