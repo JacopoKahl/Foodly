@@ -5,6 +5,7 @@ from .models import FoodList
 from recipes.models import FoodRecipes
 from rest_framework import viewsets
 from django.contrib.auth.models import User
+from django.core.files.storage import FileSystemStorage
 
 
 # Create your views here.
@@ -49,7 +50,13 @@ def food_add(request):
             error = "All fields required"
             return render(request, 'backend/error.html', {'error': error})
 
-        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice)
+
+        productimage = request.FILES['productimage']
+        fst = FileSystemStorage()
+        filename = fst.save(productimage.name, productimage)
+        url = fst.url(filename)
+
+        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, pic=productimage)
         add.save()
         return redirect('food_list')
     return  render(request, 'backend/foodlist_add.html')
@@ -64,4 +71,4 @@ class FoodViewset(viewsets.ModelViewSet):
     queryset = FoodList.objects.all()
 
     #Activate in order to request Token access for users
-    authentication_classes = (TokenAuthentication,)
+    #authentication_classes = (TokenAuthentication,)

@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 from django.utils import timezone
+from django.core.validators import MaxValueValidator, MinValueValidator
 #from tagging_autocomplete_new.models import TagAutocompleteField
 
 # Create your models here.
@@ -35,7 +36,6 @@ class FoodList(models.Model):
     #Had to be updated every day with a scheduled cron job
     productPrice = models.DecimalField(u'Price', help_text=u'The price of the single product', max_digits=10, decimal_places=2)
 
-
     def __str__(self):
         today = date.today() #grab today date
         if today >= self.productExpDate:
@@ -48,3 +48,7 @@ class FoodList(models.Model):
         return self.productName + " | " + self.productCategory + " | " + self.productStatus + " | " + str(
             self.productPrice) + "€"
 
+
+class FamilyList(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    product = models.ManyToManyField(FoodList)
