@@ -56,7 +56,7 @@ def food_add(request):
         filename = fst.save(productimage.name, productimage)
         url = fst.url(filename)
 
-        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, pic=productimage)
+        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, productimage=url)
         add.save()
         return redirect('food_list')
     return  render(request, 'backend/foodlist_add.html')
