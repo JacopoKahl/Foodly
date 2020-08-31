@@ -35,7 +35,7 @@ class FoodList(models.Model):
     todayIs = models.DateField(u'Today is', help_text=u'This will be helpful to calculate the expiration date', default=date.today,  blank=True)
     #Had to be updated every day with a scheduled cron job
     productPrice = models.DecimalField(u'Price', help_text=u'The price of the single product', max_digits=10, decimal_places=2)
-    productimage = models.TextField(blank=True)
+    productImg = models.ImageField(u'Recipe image', upload_to='media/', null=True)
 
     def __str__(self):
         today = date.today() #grab today date

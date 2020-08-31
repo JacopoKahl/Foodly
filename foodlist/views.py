@@ -44,22 +44,24 @@ def food_add(request):
         productcategory = request.POST.get('productcategory')
         expday = request.POST.get('expday')
         productprice = request.POST.get('productprice')
+        productimage = request.POST.get('productimage')
         #productnotes = request.POST.get('productnotes')
 
         if productname == "" or expday == "" or productprice == "":
             error = "All fields required"
             return render(request, 'backend/error.html', {'error': error})
 
-
+        '''
         productimage = request.FILES['productimage']
-        fst = FileSystemStorage()
-        filename = fst.save(productimage.name, productimage)
-        url = fst.url(filename)
+        fs = FileSystemStorage()
+        filename = fs.save(productimage.name, productimage)
+        url = fs.url(filename)
+        '''
 
-        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, productimage=url)
+        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, productImg=productimage)
         add.save()
         return redirect('food_list')
-    return  render(request, 'backend/foodlist_add.html')
+    return render(request, 'backend/foodlist_add.html')
 
 class UserViewset(viewsets.ModelViewSet):
     serializer_class = UserSerializer
