@@ -30,17 +30,25 @@ class FoodList(models.Model):
     productName = models.CharField(u'Product name', help_text=u'The name of the product', max_length=30)
     productStatus = models.CharField(u'Product status', max_length=10, choices=foodStatus, default='good')
     productCategory = models.CharField(u'Product category', help_text=u'The type of food', max_length=10, choices=foodCategories, default='meat')
-    #productBuyDate = models.DateField(u'Buying day', help_text=u'When you bought it')
     productExpDate = models.DateField(u'Expiring day', help_text=u'Food Expiration Dates')
     todayIs = models.DateField(u'Today is', help_text=u'This will be helpful to calculate the expiration date', default=date.today,  blank=True)
-    #Had to be updated every day with a scheduled cron job
     productPrice = models.DecimalField(u'Price', help_text=u'The price of the single product', max_digits=10, decimal_places=2)
     productImg = models.ImageField(u'Recipe image', upload_to='media/', null=True)
 
+
     def __str__(self):
-        today = date.today() #grab today date
+        today = date.today()  # grab today date
+        #dayLeft = self.productExpDate.day - today.day
+        dayLeft = (self.productExpDate - today).days
+
         if today >= self.productExpDate:
             self.productStatus = 'expired'
+        elif dayLeft <= 3:
+            self.productStatus = '-3 days left'
+        elif dayLeft <= 5:
+            self.productStatus = '-5 days left'
+        elif dayLeft <= 7:
+            self.productStatus = '-7 days left'
         else:
             self.productStatus = 'good'
 

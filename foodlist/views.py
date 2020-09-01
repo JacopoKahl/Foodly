@@ -5,6 +5,7 @@ from .models import FoodList
 from recipes.models import FoodRecipes
 from rest_framework import viewsets
 from django.contrib.auth.models import User
+from datetime import date
 from django.core.files.storage import FileSystemStorage
 
 
@@ -58,7 +59,7 @@ def food_add(request):
         url = fs.url(filename)
         '''
 
-        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, productImg=productimage)
+        add = FoodList(productName=productname, productCategory=productcategory, productExpDate=expday, productPrice=productprice, productImg=productimage, today=date.today)
         add.save()
         return redirect('food_list')
     return render(request, 'backend/foodlist_add.html')
