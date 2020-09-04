@@ -57,7 +57,8 @@ class FoodList(models.Model):
         return self.productName + " | " + self.productCategory + " | " + self.productStatus + " | " + str(
             self.productPrice) + "€"
 
-
+'''
 class FamilyList(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     product = models.ManyToManyField(FoodList)
+'''

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import FoodList, FamilyList
+from .models import FoodList
+#FamilyList
 
 #admin.site.register(FoodList)
 
@@ -11,6 +12,6 @@ class FoodAdmin(admin.ModelAdmin):
     #list_display = ['productName', 'productCategory', 'productExpDate', 'productStatus'] #display info in data tables
 
 
-admin.site.register(FamilyList)
+#admin.site.register(FamilyList)
 #class FamilyFood(admin.ModelAdmin):
 #    fields = ['lists', 'user', 'quantity']

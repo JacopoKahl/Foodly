@@ -19,6 +19,7 @@ urlpatterns = [
     #User administration panels
     url(r'^panel/$', views.panel, name='panel'),
     url(r'^panel/list/$', views.food_list, name='food_list'),
+    url(r'^panel/list/del/(?P<pk>\d+)$', views.food_delete, name='food_delete'),
     url(r'^panel/list/add/$', views.food_add, name='food_add'),
 
     path('', include(router.urls))
